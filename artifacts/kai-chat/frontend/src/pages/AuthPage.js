@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate, Navigate } from "react-router-dom";
-import { Loader2 } from "lucide-react";
+import { Loader as Loader2 } from "lucide-react";
 import { api, formatApiError } from "@/lib/api";
 import { useAuth } from "@/context/AuthContext";
 
@@ -55,6 +55,7 @@ export default function AuthPage({ mode }) {
           </label>
         )}
         {error && <p className="text-sm text-rose-400" data-testid="auth-error">{error}</p>}
+        }
         <button type="submit" disabled={loading} data-testid={isLogin ? "auth-login-submit-btn" : "auth-signup-submit-btn"}
           className="w-full h-12 rounded-full bg-[#FFE500] text-black hover:bg-yellow-300 font-semibold transition-colors flex items-center justify-center gap-2 disabled:opacity-60">
           {loading && <Loader2 className="h-4 w-4 animate-spin" />} {isLogin ? "Entrar" : "Criar conta"}

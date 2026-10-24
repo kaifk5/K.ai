@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Bookmark, Heart, Loader2, MessageCircle, Trash2, X } from "lucide-react";
+import { ArrowUpRight, Bookmark, Heart, Loader as Loader2, MessageCircle, Trash as Trash2, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useAuth } from "@/context/AuthContext";

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Search, Loader2, Sparkles } from "lucide-react";
+import { Search, Loader as Loader2, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { api, formatApiError } from "@/lib/api";
@@ -43,6 +43,8 @@ export default function Home() {
         <select value={gender} onChange={(e) => setGender(e.target.value)} data-testid="gender-select"
           className="bg-transparent text-sm text-neutral-300 font-medium focus:outline-none cursor-pointer">
           {GENDERS.map((g) => <option key={g} value={g} className="bg-neutral-900">{g}</option>)}
+          )
+          }
         </select>
       </div>
 
@@ -58,7 +60,9 @@ export default function Home() {
       </div>
 
       {error && <p className="mt-6 text-center text-neutral-400 text-sm" data-testid="catalog-error">{error}</p>}
+      }
       {chars === null && !error && <div className="flex justify-center py-20"><Loader2 className="h-6 w-6 animate-spin text-neutral-500" /></div>}
+      }
       {chars && chars.length === 0 && !error && (
         <p className="text-neutral-500 text-sm py-16 text-center" data-testid="catalog-empty">Nenhum personagem encontrado.</p>
       )}

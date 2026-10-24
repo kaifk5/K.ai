@@ -1,4 +1,4 @@
-import { Trash2 } from "lucide-react";
+import { Trash as Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription,

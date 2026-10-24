@@ -81,6 +81,7 @@ export default function Layout() {
           {user === false ? (
             <Link to="/login" data-testid="header-login-link" className="text-sm font-semibold px-4 py-2 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors">Entrar</Link>
           ) : <span className="text-sm text-neutral-500" data-testid="header-user-name">{user?.name}</span>}
+          }
         </div>
       </header>
 

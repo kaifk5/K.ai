@@ -11,7 +11,7 @@ import Conversations from "@/pages/Conversations";
 import Chat from "@/pages/ChatRoom";
 import Favorites from "@/pages/Favorites";
 import Profile from "@/pages/ProfilePage";
-import { Loader2 } from "lucide-react";
+import { Loader as Loader2 } from "lucide-react";
 
 const Protected = ({ children }) => {
   const { user } = useAuth();
@@ -37,11 +37,17 @@ function App() {
             <Route path="/login" element={<AuthPage mode="login" />} />
             <Route path="/register" element={<AuthPage mode="register" />} />
             <Route path="/create" element={<Protected><CharacterForm /></Protected>} />
+            }
             <Route path="/edit/:id" element={<Protected><CharacterForm /></Protected>} />
+            }
             <Route path="/chat" element={<Protected><Conversations /></Protected>} />
+            }
             <Route path="/chat/:id" element={<Protected><Chat /></Protected>} />
+            }
             <Route path="/favorites" element={<Protected><Favorites /></Protected>} />
+            }
             <Route path="/profile" element={<Protected><Profile /></Protected>} />
+            }
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

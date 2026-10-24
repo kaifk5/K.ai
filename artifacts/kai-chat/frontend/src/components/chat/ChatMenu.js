@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MoreHorizontal, RotateCcw, Image as ImageIcon } from "lucide-react";
+import { MoveHorizontal as MoreHorizontal, RotateCcw, Image as ImageIcon } from "lucide-react";
 import { toast } from "sonner";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import {

@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Camera, Loader2, X } from "lucide-react";
+import { Camera, Loader as Loader2, X } from "lucide-react";
 import { toast } from "sonner";
 import { api, formatApiError } from "@/lib/api";
 import { Avatar } from "@/components/Avatar";

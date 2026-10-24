@@ -60,6 +60,7 @@ export const CharacterCard = ({ c, onFavChange, index = 0 }) => {
         <div className="flex flex-wrap gap-1.5 mt-2">
           <span className="text-[11px] bg-neutral-800 text-neutral-300 px-2.5 py-1 rounded-full">{c.category}</span>
           {c.gender && c.gender !== "Outro" && <span className="text-[11px] bg-neutral-800 text-neutral-300 px-2.5 py-1 rounded-full">{c.gender}</span>}
+          }
         </div>
       </div>
     </Link>

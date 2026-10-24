@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Loader2 } from "lucide-react";
+import { Loader as Loader2 } from "lucide-react";
 import { api } from "@/lib/api";
 import { CharacterCard } from "@/components/CharacterCard";
 
@@ -17,6 +17,7 @@ export default function Favorites() {
     <div className="max-w-6xl mx-auto px-4 md:px-6 pt-6 md:pt-10">
       <h1 className="text-4xl font-extrabold tracking-tight">Favoritos</h1>
       {chars === null && <div className="flex justify-center py-20"><Loader2 className="h-6 w-6 animate-spin text-yellow-300" /></div>}
+      }
       {chars?.length === 0 && (
         <p className="text-neutral-500 text-sm py-16" data-testid="favorites-empty">
           Você ainda não favoritou ninguém. <Link to="/" className="text-yellow-300 font-semibold">Explore o catálogo</Link>

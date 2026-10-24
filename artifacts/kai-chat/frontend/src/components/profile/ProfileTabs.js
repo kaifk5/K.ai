@@ -24,6 +24,7 @@ export const CharactersTab = () => {
   if (chars === null) return null;
   if (!chars.length) return <Empty icon={Ghost} text="Você ainda não criou nenhum personagem." testId="my-characters-empty"
     action={<Link to="/create" className={createBtn} data-testid="profile-create-btn"><Plus className="h-4 w-4" /> Criar</Link>} />;
+    }
   return (
     <div className="space-y-2">
       <Link to="/create" className="flex items-center justify-center gap-1.5 h-11 rounded-full border border-dashed border-neutral-700 text-sm text-neutral-300 hover:border-yellow-300" data-testid="profile-create-btn">
@@ -65,6 +66,7 @@ export const PersonasTab = () => {
       {!list.length ? (
         <Empty icon={UserRound} text="Crie uma persona para ser quem quiser nas conversas." testId="personas-empty"
           action={<button onClick={openNew} className={createBtn} data-testid="persona-create-btn"><Plus className="h-4 w-4" /> Criar</button>} />
+          }
       ) : (
         <button onClick={openNew} data-testid="persona-create-btn" className="w-full flex items-center justify-center gap-1.5 h-11 rounded-full border border-dashed border-neutral-700 text-sm text-neutral-300 hover:border-yellow-300">
           <Plus className="h-4 w-4" /> Nova persona

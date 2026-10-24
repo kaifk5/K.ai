@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Send, Trash2, Loader2, MessageSquareText, Heart, X } from "lucide-react";
+import { Send, Trash as Trash2, Loader as Loader2, MessageSquareText, Heart, X } from "lucide-react";
 import { toast } from "sonner";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { api, formatApiError } from "@/lib/api";
@@ -93,6 +93,7 @@ export const CommentsSheet = ({ open, onOpenChange, character }) => {
         </form>
         <div className="flex-1 overflow-y-auto mt-4 space-y-4 pb-4" data-testid="comments-list">
           {items === null && <div className="flex justify-center py-10"><Loader2 className="h-5 w-5 animate-spin text-neutral-500" /></div>}
+          }
           {items?.length === 0 && (
             <div className="flex flex-col items-center py-10 text-neutral-500 text-sm" data-testid="comments-empty">
               <MessageSquareText className="h-10 w-10 text-neutral-700 mb-2" /> Seja o primeiro a comentar.
@@ -104,6 +105,8 @@ export const CommentsSheet = ({ open, onOpenChange, character }) => {
               {repliesOf(c.id).length > 0 && (
                 <div className="ml-12 space-y-3 border-l border-neutral-800 pl-3" data-testid={`comment-replies-${c.id}`}>
                   {repliesOf(c.id).map((r) => <Comment key={r.id} c={r} small {...handlers} />)}
+                  )
+                  }
                 </div>
               )}
             </div>

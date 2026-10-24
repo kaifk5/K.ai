@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Cropper from "react-easy-crop";
-import { Check, ImagePlus, Loader2, UserSquare } from "lucide-react";
+import { Check, ImagePlus, Loader as Loader2, SquareUser as UserSquare } from "lucide-react";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Slider } from "@/components/ui/slider";
@@ -24,6 +24,7 @@ const Option = ({ active, icon: Icon, title, onClick, testId, preview }) => (
   <button onClick={onClick} data-testid={testId}
     className={`w-full flex items-center gap-3 p-3 rounded-2xl border text-left transition-colors ${active ? "border-yellow-300 bg-yellow-300/10" : "border-neutral-800 bg-neutral-900 hover:bg-neutral-800"}`}>
     {preview ? <img src={preview} alt="" className="h-14 w-10 rounded-lg object-cover" /> : <span className="h-14 w-10 rounded-lg bg-neutral-800 grid place-items-center"><Icon className="h-5 w-5" /></span>}
+    }
     <span className="flex-1 font-semibold text-sm">{title}</span>
     {active && <Check className="h-5 w-5 text-yellow-300" />}
   </button>

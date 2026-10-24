@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader as Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { api, formatApiError, GENDERS } from "@/lib/api";
@@ -44,12 +44,15 @@ export const PersonaDialog = ({ open, onOpenChange, persona, onSaved }) => {
           <div className="flex gap-2">
             <select className={input} value={form.gender} onChange={set("gender")} data-testid="persona-gender-select">
               {GENDERS.map((g) => <option key={g} value={g}>{g}</option>)}
+              )
+              }
             </select>
             <input className={input} type="number" min={18} max={999} placeholder="Idade (18+)" value={form.age} onChange={set("age")} data-testid="persona-age-input" />
           </div>
           <textarea className={input} rows={2} placeholder="Aparência" value={form.appearance} onChange={set("appearance")} maxLength={500} data-testid="persona-appearance-input" />
           <textarea className={input} rows={3} placeholder="Interesses e descrição" value={form.description} onChange={set("description")} maxLength={800} data-testid="persona-description-input" />
           {error && <p className="text-sm text-rose-400" data-testid="persona-form-error">{error}</p>}
+          }
           <button type="submit" disabled={saving} data-testid="persona-save-btn"
             className="w-full h-11 rounded-full bg-[#FFE500] text-black font-bold flex items-center justify-center gap-2 disabled:opacity-60">
             {saving && <Loader2 className="h-4 w-4 animate-spin" />} Salvar persona

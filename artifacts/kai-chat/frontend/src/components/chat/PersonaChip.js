@@ -51,6 +51,7 @@ export const PersonaChip = ({ convId, persona, onChange }) => {
               </button>
             ))}
             {list?.length === 0 && <p className="text-sm text-neutral-500 py-2">Você ainda não tem personas.</p>}
+            }
             {persona && (
               <button onClick={() => choose(null)} data-testid="persona-option-none" className="w-full flex items-center gap-3 p-3 rounded-2xl text-neutral-400 hover:bg-neutral-900">
                 <UserX className="h-5 w-5" /> Conversar sem persona

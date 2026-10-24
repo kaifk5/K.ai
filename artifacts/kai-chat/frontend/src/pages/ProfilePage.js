@@ -64,6 +64,7 @@ export default function ProfilePage() {
 
       <div className="mt-10 flex items-center justify-between text-xs text-neutral-500 border-t border-neutral-900 pt-4">
         {usage && <span className="flex items-center gap-1.5" data-testid="profile-usage"><Zap className="h-3.5 w-3.5 text-yellow-300" /> {usage.used_today}/{usage.daily_limit} mensagens hoje</span>}
+        }
         <button onClick={async () => { await logout(); navigate("/"); }} data-testid="logout-btn" className="flex items-center gap-1.5 hover:text-rose-400">
           <LogOut className="h-3.5 w-3.5" /> Sair
         </button>

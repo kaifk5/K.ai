@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Loader2 } from "lucide-react";
+import { Loader as Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
@@ -14,6 +14,7 @@ const Field = ({ label, hint, children }) => (
   <label className="block">
     <span className="text-sm font-semibold text-neutral-200">{label}</span>
     {hint && <span className="block text-xs text-neutral-500 mb-1.5">{hint}</span>}
+    }
     <div className={hint ? "" : "mt-1.5"}>{children}</div>
   </label>
 );
@@ -69,6 +70,8 @@ export default function CharacterForm() {
             <SelectTrigger className="h-12 rounded-xl bg-black border-neutral-800" data-testid="character-category-select"><SelectValue /></SelectTrigger>
             <SelectContent>
               {CATEGORIES.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+              )
+              }
             </SelectContent>
           </Select>
         </Field>
@@ -77,6 +80,8 @@ export default function CharacterForm() {
             <SelectTrigger className="h-12 rounded-xl bg-black border-neutral-800" data-testid="character-gender-select"><SelectValue /></SelectTrigger>
             <SelectContent>
               {GENDERS.map((g) => <SelectItem key={g} value={g}>{g}</SelectItem>)}
+              )
+              }
             </SelectContent>
           </Select>
         </Field>
@@ -97,6 +102,7 @@ export default function CharacterForm() {
           <Switch checked={form.is_public} onCheckedChange={(v) => setForm({ ...form, is_public: v })} data-testid="character-public-switch" />
         </div>
         {error && <p className="text-sm text-rose-400" data-testid="character-form-error">{error}</p>}
+        }
         <button type="submit" disabled={saving} data-testid="character-create-submit-btn"
           className="w-full h-12 rounded-full bg-[#FFE500] text-black hover:bg-yellow-300 font-semibold transition-colors flex items-center justify-center gap-2 disabled:opacity-60">
           {saving && <Loader2 className="h-4 w-4 animate-spin" />} {id ? "Salvar alterações" : "Criar personagem"}
