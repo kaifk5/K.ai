@@ -1,0 +1,1 @@
+- [K.ai visual direction](kai-visual-direction.md) — Keep blue/black gradients and touch/pointer reactions while preserving app behavior.

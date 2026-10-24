@@ -1,0 +1,158 @@
+{
+  "project_title": "MVP Plataforma Web Responsiva de Chat com Personagens de IA",
+  "language": "pt-BR",
+  "app_type": "mobile_web_app",
+  "theme_strategy": {
+    "default_mode": "dark",
+    "theme_toggle_supported": true,
+    "archetype": "Electric Cyberpunk / Modern AI Persona Hub (Inspired by Emochi.ai)",
+    "visual_identity": "Dark immersive canvas with vibrant neon violet, cyan glow accents, soft rounded cards, glassmorphism navigation, responsive bottom bar for mobile, and crisp chat bubbles."
+  },
+  "typography": {
+    "google_fonts": [
+      "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    ],
+    "headings": {
+      "font_family": "'Outfit', sans-serif",
+      "h1": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "h4": "text-lg font-semibold"
+    },
+    "body": {
+      "font_family": "'Plus Jakarta Sans', sans-serif",
+      "text": "text-sm sm:text-base leading-relaxed text-slate-300 dark:text-slate-200"
+    },
+    "labels_and_micro": {
+      "category_chip": "text-xs font-semibold uppercase tracking-wider",
+      "timestamp": "text-[11px] text-slate-400 font-medium"
+    }
+  },
+  "colors": {
+    "primary": "#8B5CF6",
+    "primary_hover": "#7C3AED",
+    "primary_glow": "rgba(139, 92, 246, 0.35)",
+    "secondary_accent": "#06B6D4",
+    "secondary_glow": "rgba(6, 182, 212, 0.3)",
+    "background_dark": "#0B0F17",
+    "card_dark": "#131926",
+    "card_border": "#1E293B",
+    "text_main": "#F8FAFC",
+    "text_muted": "#94A3B8",
+    "user_message_bg": "bg-violet-600 text-white shadow-md shadow-violet-900/30",
+    "ai_message_bg": "bg-slate-800/90 text-slate-100 border border-slate-700/60 shadow-sm",
+    "rate_limit_badge": "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30"
+  },
+  "components_and_layout": {
+    "mobile_navigation": {
+      "position": "fixed bottom-0 left-0 right-0 z-50",
+      "style": "bg-slate-900/95 backdrop-blur-md border-t border-slate-800 py-2 px-4 flex justify-around items-center md:hidden",
+      "items": [
+        { "label": "Catálogo", "icon": "Compass", "path": "/" },
+        { "label": "Conversas", "icon": "MessageSquare", "path": "/chat" },
+        { "label": "Favoritos", "icon": "Heart", "path": "/favorites" },
+        { "label": "Criar", "icon": "PlusCircle", "path": "/create" },
+        { "label": "Perfil", "icon": "User", "path": "/profile" }
+      ]
+    },
+    "desktop_header": {
+      "style": "sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 px-6 py-3 hidden md:flex justify-between items-center",
+      "brand": "AI Persona (Estilo Emochi.ai)",
+      "badge": "Gemini AI Powered"
+    },
+    "character_card": {
+      "style": "relative group rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden transition-all duration-300 hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-900/20 flex flex-col h-full",
+      "avatar_aspect": "aspect-[4/5] object-cover w-full group-hover:scale-105 transition-transform duration-500",
+      "badge_category": "absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-violet-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-violet-500/30",
+      "favorite_button": "absolute top-3 right-3 p-2 rounded-full bg-slate-950/70 text-slate-300 hover:text-rose-400 hover:bg-slate-900 transition-colors"
+    },
+    "chat_screen": {
+      "layout": "h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex flex-col bg-slate-950 text-slate-100 relative",
+      "header": "flex items-center justify-between p-3 sm:p-4 border-b border-slate-800 bg-slate-900/70 backdrop-blur-sm shrink-0",
+      "message_area": "flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth pb-24 md:pb-6",
+      "input_bar": "sticky bottom-14 md:bottom-0 p-3 sm:p-4 bg-slate-900/90 border-t border-slate-800 backdrop-blur-md flex items-center gap-2 z-30",
+      "typing_indicator": "flex items-center gap-1.5 text-xs text-violet-400 italic px-4 py-1 animate-pulse",
+      "rate_limit_display": "text-xs font-medium px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-cyan-400 flex items-center gap-1.5"
+    },
+    "character_form": {
+      "fields": ["Nome do Personagem", "Categoria", "Descrição Curta", "Personalidade / Prompt do Gemini", "Saudação Inicial", "URL do Avatar"],
+      "style": "max-w-2xl mx-auto p-6 bg-slate-900/90 rounded-2xl border border-slate-800 shadow-xl space-y-4"
+    }
+  },
+  "rate_limits": {
+    "daily_limit": 50,
+    "per_minute_limit": 6,
+    "error_message_daily": "Limite diário atingido (50 mensagens/dia). Volte amanhã para continuar conversando!",
+    "error_message_minute": "Muitas mensagens em um minuto (máximo 6/min). Aguarde alguns segundos."
+  },
+  "image_urls": {
+    "character_avatars": [
+      {
+        "id": "char-1",
+        "name": "Aria Cyberpunk",
+        "category": "Ficção Científica",
+        "url": "https://images.unsplash.com/photo-1580046939256-c377c5b099f1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxjeWJlcnB1bmslMjBmYW50YXN5JTIwZnV0dXJpc3RpYyUyMGNoYXJhY3RlciUyMHBvcnRyYWl0JTIwYXZhdGFyfGVufDB8fHx8MTc5Mjg1ODY1MXww&ixlib=rb-4.1.0&q=85",
+        "description": "Guerreira hacker futurista de Neo-Tóquio."
+      },
+      {
+        "id": "char-2",
+        "name": "Sora Tech Headset",
+        "category": "Tecnologia",
+        "url": "https://images.unsplash.com/photo-1656229181541-a42184b5625c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxjeWJlcnB1bmslMjBmYW50YXN5JTIwZnV0dXJpc3RpYyUyMGNoYXJhY3RlciUyMHBvcnRyYWl0JTIwYXZhdGFyfGVufDB8fHx8MTc5Mjg1ODY1MXww&ixlib=rb-4.1.0&q=85",
+        "description": "Especialista em inteligência artificial e assistente robótica."
+      },
+      {
+        "id": "char-3",
+        "name": "Kaelen Cosmic Maiden",
+        "category": "Fantasia",
+        "url": "https://images.pexels.com/photos/27424803/pexels-photo-27424803.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Maga cósmica guardiã das estrelas."
+      },
+      {
+        "id": "char-4",
+        "name": "Na'vi Stylized Avatar",
+        "category": "Aventura",
+        "url": "https://images.pexels.com/photos/18505361/pexels-photo-18505361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Exploradora alienígena das florestas vivas."
+      },
+      {
+        "id": "char-5",
+        "name": "Neon Blade Runner",
+        "category": "Cyberpunk",
+        "url": "https://images.pexels.com/photos/8107821/pexels-photo-8107821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Detetive cibernética sob luzes de neon."
+      }
+    ]
+  },
+  "testing_requirements": {
+    "data_testid_convention": "kebab-case, explicit and unique",
+    "mandatory_data_testids": [
+      "character-card-{id}",
+      "character-favorite-btn-{id}",
+      "character-search-input",
+      "category-chip-{category}",
+      "chat-input-textarea",
+      "chat-send-button",
+      "chat-message-bubble-user",
+      "chat-message-bubble-ai",
+      "rate-limit-badge",
+      "rate-limit-error-alert",
+      "mobile-nav-item-{name}",
+      "character-create-submit-btn",
+      "character-edit-btn-{id}",
+      "character-delete-btn-{id}",
+      "auth-login-submit-btn",
+      "auth-signup-submit-btn",
+      "report-character-btn"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use standard .js and React components with Tailwind CSS and Shadcn primitives.",
+    "Implement real Gemini API responses on backend/frontend with typing streaming simulation if needed.",
+    "Store chat history and custom characters in local storage or backend DB (FastAPI + SQLite/In-Memory).",
+    "Ensure total responsive fidelity: Mobile users get bottom tab navigation, desktop users get side/top navigation.",
+    "Enforce rate limit counter UI (50 daily messages, 6 per minute) with visible feedback and error toasts/banners.",
+    "Ensure pt-BR strings for all user-facing content.",
+    "Always attach data-testid attributes to all key interactive elements."
+  ]
+}

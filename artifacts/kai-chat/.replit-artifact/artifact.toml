@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "K.ai — chat com personagens de IA"
+description = "Aplicação de chat com personagens de IA, frontend React e API FastAPI com persistência MongoDB."
+version = "1.0.0"
+id = "artifacts/kai-chat"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 8001
+
+[services.development]
+run = "bash run.sh"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kai-chat", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kai-chat/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "8001"
+BASE_PATH = "/"
