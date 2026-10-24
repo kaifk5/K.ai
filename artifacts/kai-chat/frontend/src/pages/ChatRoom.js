@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, Send, Loader2, AlertTriangle, Plus, Check, MessageCircle, Lock } from "lucide-react";
+import { ArrowLeft, Send, Loader as Loader2, TriangleAlert as AlertTriangle, Plus, Check, MessageCircle, Lock } from "lucide-react";
 import { toast } from "sonner";
 import { api, formatApiError, mediaUrl } from "@/lib/api";
 import { Avatar } from "@/components/Avatar";
